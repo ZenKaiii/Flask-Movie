@@ -127,6 +127,10 @@ class Admin(db.Model):
     adminlogs = db.relationship("Adminlog",backref="admin")
     oplogs = db.relationship("Oplog",backref="admin")
 
+    def check_pwd(self,pwd):
+        from werkzeug.security import check_password_hash
+        return check_password_hash(self.pwd,pwd)
+
     def __repr__(self):
         return "<admin %r>" % self.id
 
