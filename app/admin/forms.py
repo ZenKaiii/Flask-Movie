@@ -62,7 +62,7 @@ class TagForm(FlaskForm):
         }
     )
     submit = SubmitField(
-        label='添加',
+        label='编辑',
         render_kw={
             "class": "btn btn-primary",
         }
